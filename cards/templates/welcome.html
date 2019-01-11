@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load bootstrap3 %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+
+<div class="container-fluid">
+    <div class="page-header">
+        <h1 style="font-family: fantasy">Welcome to flash cards</h1>
+    </div>
+
+    <div class="panel">
+        <div class="jumbotron">
+            {% if flashes %}
+        {% for flash in flashes %}
+        <div class="row">
+            <div class="col-md-3 "></div>
+
+            <div class="col-md-6 ">
+                <div class="thumbnail">
+                    <a class="text-center" href="{{ flash_id }}">{{flash.subject}}</a>
+                    <h1 class="text-center">{{flash.title}}</h1>
+                    <p>{{flash.description}}</p>
+                    <p>Posted By: {{flash.User}}</p>
+                    <p>Posted On: {{flash.pub_date}}</p>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    <h2 style="text-align: center">Follow me on:</h2>
+    <div class="row">
+        <div class="col-md-4">
+        <div class="social" >
+            <!--Facebook-->
+            <button type="button" class="btn btn-fb btn btn-success"><a href="https://www.facebook.com/user" target='blank'><i class="fab fa-facebook-f pr-1"></i>Facebook</a></button><br><br>
+        </div>
+        <div class="col-md-4">
+            <!--Twitter-->
+            <button type="button" class="btn btn-tw btn btn-danger"><a href="https://twitter.com/user" target="blank"><i class="fab fa-twitter pr-1"></i>Twitter</a></button><br><br>
+        </div>
+        <div class="col-md-4">
+            <!--Instagram-->
+            <button type="button" class="btn btn-ins btn btn-success"><a href="http://instagram.com/user" target="blank"><i class="fab fa-instagram pr-1"></i>Instagram</a></button>
+        </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

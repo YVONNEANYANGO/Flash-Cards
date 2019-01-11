@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{% block content %}
+{% load bootstrap3 %}
+{% load static %}
+{{block.super}}
+
+<header>
+
+    <div class="container">
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <img src="{{profile.Profile_photo.url}}" width="120px" height="120px " alt="" class="img-responsive">
+
+            </div>
+
+            <div class="profile-user-settings">
+
+                <h1 class="profile-user">{{user.user}}</h1>
+            <div class="profile-bio">
+
+                <p><span class="profile-real-name">{{user.username}}</span> <br> {{user.profile.bio}}</p>
+                <p>{{user.flashes}}</p>
+
+            </div>
+
+        </div>
+        <!-- End of profile section -->
+        <button class="btn profile-edit-btn" data-toggle="modal" data-target="#myModal{{user.id}}">Add Flashes</button>
+        <h2><a href="{% url 'newprofile'%}"><button>Update Profile</button></a></h2>
+    </div>
+    <!-- End of container -->
+
+</header>
+
+
+
+
+
+
+
+{% endblock %}
