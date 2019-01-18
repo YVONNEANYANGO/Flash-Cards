@@ -13,22 +13,21 @@
     <div class="panel">
         <div class="jumbotron">
             {% if flashes %}
-        {% for flash in flashes %}
-        <div class="row">
-            <div class="col-md-3 "></div>
-
-            <div class="col-md-6 ">
-                <div class="thumbnail">
-                    <a class="text-center" href="{{ flash_id }}">{{flash.subject}}</a>
-                    <h1 class="text-center">{{flash.title}}</h1>
-                    <p>{{flash.description}}</p>
-                    <p>Posted By: {{flash.User}}</p>
-                    <p>Posted On: {{flash.pub_date}}</p>
+            {% for flash in flashes %}
+            <div class="row">
+                <div class="col-md-3 "></div>
+                <div class="col-md-6 ">
+                    <div class="thumbnail">
+                        <a class="text-center" href="{{ flash_id }}">{{flash.subject}}</a>
+                        <h1 class="text-center">{{flash.title}}</h1>
+                        <p>{{flash.description}}</p>
+                        <p>Posted By: {{flash.User}}</p>
+                        <p>Posted On: {{flash.pub_date}}</p>
+                    </div>
                 </div>
+                <div class="col-md-3"></div>
             </div>
-            <div class="col-md-3"></div>
-        </div>
-        {% endfor %}
+            {% endfor %}
         </div>
     </div>
     {% endif %}

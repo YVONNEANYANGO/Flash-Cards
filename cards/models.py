@@ -11,6 +11,8 @@ class Profile(models.Model):
 
 
     # Methods
+    def __str__(self):
+        return self.username
 
     def save_profile(self):
         self.save()
@@ -21,8 +23,7 @@ class Profile(models.Model):
     def update_profile(self):
         self.update()
 
-    def __str__(self):
-        return self.username
+    
 
     @classmethod
     def get_profile(cls, profile_id):
